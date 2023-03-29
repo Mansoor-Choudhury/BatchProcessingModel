@@ -1,0 +1,9 @@
+[
+   {
+      "batchid":"abc",
+      "batchTypeId":"abc123",
+      "batchTypeDescription":"typeABC",
+      "batchExpirationDate":"2024-02-22",
+      "batchCount":10
+   }
+]
