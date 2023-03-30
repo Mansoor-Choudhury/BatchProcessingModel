@@ -42,7 +42,6 @@ public class BatchServiceTest {
 
     @Test
     void testValidBatchCreationSuccess() {
-        // Given
         Batch batch1 = validBatchDataOne();
         Batch batch2 = validBatchDataTwo();
 
@@ -50,10 +49,8 @@ public class BatchServiceTest {
         when(batchRepository.existsById("abc")).thenReturn(false);
         when(batchRepository.existsById("xyz")).thenReturn(false);
 
-        // When
         BatchResponse batchResponse = batchService.createBatch(batches);
 
-        // Then
         verify(batchRepository, times(2)).save(any(Batch.class));
         verify(applicationEventPublisher, times(2)).publishEvent(any(Batch.class));
 
@@ -65,11 +62,9 @@ public class BatchServiceTest {
 
     @Test
     void testCreateBatchWithInvalidBatchId() {
-        // Given
         Batch batch1 = inValidBatchData();
         List<Batch> batches = Arrays.asList(batch1);
 
-        // When
         BatchResponse batchResponse = batchService.createBatch(batches);
 
         assertEquals(HttpStatus.OK.value(), batchResponse.getStatusCode());
@@ -86,7 +81,6 @@ public class BatchServiceTest {
 
     @Test
     void testCreateBatchWithExistingBatchId() {
-        // Given
         Batch batch1 = validBatchDataOne();
         Batch batch2 = validBatchDataTwo();
 
