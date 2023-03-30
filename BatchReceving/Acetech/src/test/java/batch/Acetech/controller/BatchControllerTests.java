@@ -44,7 +44,7 @@ public class BatchControllerTests {
 
     @BeforeEach
     void init(){
-        MockitoAnnotations.initMocks(this);
+        MockitoAnnotations.openMocks(this);
     }
 
     @Test
@@ -68,5 +68,4 @@ public class BatchControllerTests {
         batchList.add(batch);
         return BatchResponse.builder().successfulBatchList(batchList).message("Created Successfully").statusCode(200).build();
     }
-
 }
