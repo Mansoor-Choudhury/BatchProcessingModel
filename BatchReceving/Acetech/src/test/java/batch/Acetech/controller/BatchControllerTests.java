@@ -43,9 +43,6 @@ public class BatchControllerTests {
     @MockBean
     private BatchService batchService;
 
-    @Autowired
-    private ObjectMapper objectMapper;
-
     @BeforeEach
     void init(){
         MockitoAnnotations.initMocks(this);

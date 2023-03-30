@@ -17,7 +17,6 @@ import org.springframework.transaction.event.TransactionalEventListener;
 @Component
 public class BatchEventsToKafka {
 
-
     @Value("${spring.kafka.topic.name}")
     private String batchTopicName;
 
@@ -37,6 +36,6 @@ public class BatchEventsToKafka {
                     .setHeader(KafkaHeaders.TOPIC, batchTopicName)
                     .build();
             kafkaTemplate.send(message);
-        log.info(String.format("Batch Event has been sent to topic %s with data %s"), batchTopicName, batch.toString());
+        log.info("Batch Event has been sent to topic batch_intimation with data" + batch.toString());
     }
 }
