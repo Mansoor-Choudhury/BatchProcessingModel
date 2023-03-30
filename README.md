@@ -55,7 +55,9 @@ Steps to run the project
 }
 
 14.Once a request is send, the producer in Acetech will send a Batch to the Kafka broker and the consumer of the same topic in Partners will be able read from the topic. Hence in the terminal where partners application was ran, the Batch message will be displayed.
+
 15.Persisted data in Acetech is avilable in Spring boot H2 Db and can be accessed using
   localhost:8081/h2. 
 
 16.To connect to DB, use username - user and leave password as blank. Run SQL queries in BATCH table to view the data.  
+
